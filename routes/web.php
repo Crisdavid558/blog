@@ -14,6 +14,8 @@
 
 
 Route::get('/','WelcomeController@welcome')->name('welcome'); //index
+Route::get('/tema/{tema}','ThemeController@show')->name('tema.show');
+
 
 Auth::routes();
 

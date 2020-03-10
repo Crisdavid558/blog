@@ -134,6 +134,7 @@
 
 @if($errors->any())
     @section('include-login-modal')
+    @section('.mdb-select')
     <script src="{{ asset('js/login-modal.js') }}" defer></script>
     @endsection
 @endif

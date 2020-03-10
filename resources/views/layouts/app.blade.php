@@ -61,7 +61,10 @@
                                 <div class="dropdown-menu" aria-labelledby="anunciosdropdown">
 
                                     @foreach($temasTodos as $tema)
-                                    <a class="dropdown-item" href="#">{{ $tema->nombre }}</a>
+                                    
+                                    <a class="dropdown-item" href="{{ route('tema.show' ,$tema) }}">{{ $tema->nombre }}</a>
+                           
+
                                     @endforeach
                                     {{-- <a class="dropdown-item" href="#">Semestre 1</a>
                                     <a class="dropdown-item" href="#">Semestre 2</a>

@@ -33,6 +33,10 @@ class User extends Authenticatable
         return $this->hasMany(Theme::class);
     }
 
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
