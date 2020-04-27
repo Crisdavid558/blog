@@ -20,6 +20,8 @@ class CreateThemesTable extends Migration
             $table->string('nombre');
             $table->string('slug')->index()->unique();
             $table->boolean('destacado')->default(false);
+            $table->boolean('suscripcion')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

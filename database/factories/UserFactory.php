@@ -19,6 +19,8 @@ $factory->define(App\User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->email,
         'alias' => $faker->unique()->word,
+        'bloqueado' => $faker->boolean(false),
+        'es_admin' => $faker->boolean(false),
         'password' => bcrypt('12345'),
         'remember_token' => Str::random(10),
         'created_at' => $faker->dateTimeBetween('-3 years', 'now', 'America/Chihuahua'),

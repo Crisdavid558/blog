@@ -37,6 +37,49 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name']=ucfirst(mb_strtolower($value, 'UTF-8'));
+    }
+
+    public function getUsuarioRolesAttribute()
+    {
+        $roles=$this->roles;
+            foreach ($roles as $role)
+            {
+                    echo $role->nombre."<br>";
+            }
+    }
+
+    public function getUsuarioBloqueadoAttribute()
+    {
+        $bloqueado=$this->bloqueado;
+        if(!$bloqueado)
+            return "No Bloqueado";
+        return "Bloqueado";
+    }
+
+    public function hasRole($role)
+    {
+        $roles=$this->roles;
+        foreach ($roles as $suRole)
+        {
+            if($suRole->nombre==$role)
+            return true;
+        }
+        return false;
+    }
+
+    public function getNameAttribute($valor)
+    {
+        return ucfirst(strtolower($valor));
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

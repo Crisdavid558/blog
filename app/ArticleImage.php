@@ -3,11 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
 
 class ArticleImage extends Model
 {
-    public function articulo()
-    {
-        return $this->belongsTo(Article::class);
-    }
+    use SoftDeletes;
+    use SoftCascadeTrait;
+
+    protected $dates = ['deleted_at'];
+    // $articuloImagen->articulo
+    public function article()
+	{
+		return $this->belongsTo(Article::class);
+	}
 }

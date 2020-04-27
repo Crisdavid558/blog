@@ -30,19 +30,30 @@ body{
 }
 
 .header{
+    background-image: url(../img/industrial10.jpg);
     height: 50rem;
-    background-image: url(../img/industrial4.jpg);
-    background-size: cover;
+    background-size: 100% 100%;
     background-position:bottom center; 
     background-attachment: fixed;
-    opacity: 0.8;
+    opacity: 0.9;
     background-image: transparent;
     width: 100%;
 }
 
 .barra {
-    background-color: #71b100;
+    background-color: transparent;
+    
 }
+
+@media (min-width: 768px) { 
+    .header {
+        background-image: url(../img/industrial14.jpg);
+        opacity: 0.8;
+    }
+}
+
+
+
 
 @media (min-width: 992px) { 
     .barra {
@@ -50,6 +61,7 @@ body{
     }
     .header {
         position: relative;
+        background-image: url(../img/industrial14.jpg);
     }
     .header .barra {
         position: absolute;
@@ -59,8 +71,57 @@ body{
 
 }
 
+
+
+
+
+.posicion{
+
+    position: absolute;
+    top: 35%;
+    z-index: 100;
+  
+ 
+}
+
+.imagen{
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    background-size: 50% 50%;
+}
+
+.posicion2{
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    font-size: 5rem;
+    font-weight: 1000; 
+ 
+}
+
+.posicion3{
+    position: absolute;
+    top: 75%;
+    z-index: 100;
+}
+
+.posicion4{
+    position: absolute;
+    top: 75%;
+    z-index: 100;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+
+
+
 .tipob li a:hover{
-    background-color: 	#000000;
+    background-color: 	#1187f5;
 }
 
 
@@ -81,8 +142,8 @@ body{
 .tipoa{
     font-family: "Bebas";
     font-weight: 900; 
-    font-size: 2.5rem;
-    color: #F5FFFA;
+    font-size: 1.5rem;
+    color: #91e842;
 }
 
 .tipob{
@@ -96,6 +157,7 @@ body{
     font-size: 3.5rem;
     font-weight: 900; 
     color:	#F5FFFA;
+    top: 5%;
 }
 
 
@@ -111,7 +173,7 @@ body{
 }
 
 .nav-link{
-    color: white!important;
+    color: black!important;
 }
 
 
@@ -179,39 +241,9 @@ body{
      color: #f46669;
 }
 
-.licenciatura {
-    background-image: url(../img/industrial5.jpg);
-    background-size: cover;
-    background-position: center center;
-    opacity: 0.8;
-    background-image: transparent;
-    width: 100%;
-}
 
-.estudia{
-    font-family: "Alatsi-Regular";
-    color:	#F5FFFA;
 
-}
 
-.estudia-licenciatura{
-   height: 38rem; 
-}
-
-.estudia-licenciatura .contenido h1{
-    font-size: 3.4rem;
-    font-weight: 700;
-}
-
-.footer{
-    height: 30rem;
-    background-image: url(../img/logistica1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 0.8;
-    background-image: transparent;
-}
 
 .error404{
     height: 30rem;
@@ -221,9 +253,7 @@ body{
     background-position: center center;
 }
 
-.logistica {
-    height: 28rem;
-}
+
 
 .btn-primary{
     background-color: #5cffe2;
@@ -242,3 +272,207 @@ body{
 .carousel-item {
     transition-duration: 1s;
 }
+
+
+
+
+
+
+
+
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+  }
+  .timeline__content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+  }
+  .timeline__content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, .7);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    line-height: 25px;
+  }
+  .timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, .07);
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline:before {
+      left: 40px;
+    }
+  }
+  .timeline-item {
+    padding: 40px 0;
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+  }
+  .timeline-item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, .5);
+    font-size: 13px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    border-left: 2px solid rgba(255, 255, 255, .5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+  }
+  .timeline-item:nth-child(even) {
+    align-self: flex-end;
+  }
+  .timeline-item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, .5);
+    padding-right: 15px;
+  }
+  .timeline-item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  .timeline-item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+  }
+  .timeline-item--active .timeline__content-title {
+    margin: -50px 0 20px 0;
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline-item {
+      align-self: baseline !important;
+      width: 100%;
+      padding: 0 30px 150px 80px;
+    }
+    .timeline-item:before {
+      left: 10px !important;
+      padding: 0 !important;
+      top: 50px;
+      text-align: center !important;
+      width: 60px;
+      border: none !important;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 40px;
+    }
+  }
+  .timeline__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+  }
+  .timeline-container {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .timeline-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   background: rgba(0,0,0,0.6);
+    content: "";
+  }
+  .timeline-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .timeline-header__title {
+    color: #fff;
+    font-size: 58px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    margin: 0;
+  }
+  .timeline-header__subtitle {
+    color: rgba(255, 255, 255, .5);
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+  }
+  .demo-footer {
+    padding: 60px 0;
+    text-align: center;
+  }
+  .demo-footer a {
+    color: #999;
+    display: inline-block;
+    font-family: Cardo;
+  }
+
+
+ .imagen1{
+  background-image: url(../img/educacion.png);
+ }
+
+ .imagen2{
+  background-image: url(../img/gobierno.png);
+ }
+ .imagen3{
+  background-image: url(../img/tecnm.png);
+ }
+
+ .imagen4{
+  background-image: url(../img/itcj.png);
+ }
+ .imagen5{
+  background-image: url(../img/tecnm.png);
+ }
+
+ .imagen6{
+  background-image: url(../img/itcj.png);
+ }
+ .imagen7{
+  background-image: url(../img/gobierno.png);
+ }
+
+ .imagen8{
+  background-image: url(../img/educacion.png);
+ }
+
+ .display{
+   display: none;
+ }

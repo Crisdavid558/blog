@@ -5,8 +5,9 @@
 
 
 <section class="section clases ">
+  @if($usuarioAutenticado && !$usuarioBloqueado)
     <h2 class="separador text-center mb-5 publicaciones-destacadas"> {{$tema->nombre}} </h2>
-    <div class="container">
+    <div class="container-fluid">
     <div class="row">
     @foreach ($articulos as $articulo)
             
@@ -19,7 +20,7 @@
     </div>
     <div class="card-body">
     <h3 class="card-title">{{$articulo->titulo}}</h3>
-    <p class="card-subtitle my-2">{{$articulo->contenido}}</p>
+    <p class="card-subtitle my-2">{!!  $articulo->contenido  !!}</p>
     <a href="#{{ $articulo->id }}"  class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView{{ $articulo->id }}">Ver Más</a>
 
     </div>
@@ -31,6 +32,10 @@
     </div>  
     @endforeach
 
+
+
+
+  
 
     @foreach ($articulos as $articulo)
 
@@ -87,7 +92,7 @@
                     <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                       data-parent="#accordionEx">
                       <div class="card-body">
-                        {{$articulo->contenido}}
+                        {!!   $articulo->contenido !!}
                       </div>
                     </div>
     
@@ -121,16 +126,65 @@
       </div>
     </div>
 
+
+
+
     @endforeach
 
 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {{ $articulos->links() }}
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+    @elseif(!$usuarioAutenticado)
+
+
+    <div class="alert alert-success mt-3" role="alert">
+      <h4 class="alert-heading">Un momento!</h4>
+      <p>Para acceder a este contenido debes suscribirte primero y luego iniciar sesión.</p>
+      <hr>
+      <p class="mb-0"><a href="{{ url('/register') }}">Suscribirse</a></p>
     </div>
+ 
+
+  @elseif($usuarioBloqueado)
+  <div class="alert alert-success mt-3" role="alert">
+    <h4 class="alert-heading">Un momento!</h4>
+    <p>Has sido bloqueado!</p>
+    <hr>
+
+  </div>
+@endif
+
+
+
+
 
     </div>
 
+    </div>
+
+
+
+      
 
 
 </section>
+
+
+
+
+
+
+
 
 
 
